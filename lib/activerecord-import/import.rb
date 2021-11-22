@@ -697,7 +697,7 @@ class ActiveRecord::Base
           if models
             models.each_with_index do |failed_instance, index|
               if failed_instance.errors.any?
-                failed_instances << options[:track_validation_failures] ? [index, failed_instance] : failed_instance
+                failed_instances << (options[:track_validation_failures] ? [index, failed_instance] : failed_instance)
               end
             end
           else
